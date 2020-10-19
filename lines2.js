@@ -29,7 +29,7 @@
 
 // var pathLayer= L.layerGroup(polarPath)
 
-var BearID_mcp32 = [
+var BearID_mcp32 = L.polyline( [
 [ 70.473, -147.153],
 [ 70.472, -147.14],
 [ 70.696, -146.739],
@@ -1033,12 +1033,12 @@ var BearID_mcp32 = [
 [ 71.6024, -157.848],
 [ 71.7029, -157.4653]   
   
-];
+],{color:"green"}).bindPopup("Bear 32");
 // L.polyline(BearID_mcp32, {
 //   color: "red"
 // }).addTo(myMap);
 
-var BearID_mcp281 = [
+var BearID_mcp281 =  L.polyline( [
     [ 70.22425, -145.79004],
     [ 70.23806, -145.78585],
     [ 70.24153, -145.77732],
@@ -1976,14 +1976,14 @@ var BearID_mcp281 = [
     [ 72.1036, -155.9339]
       
   
-];
+],{color:"white"}).bindPopup("Bear 281");
 
 // Create a polyline using the line coordinates and pass in some initial options
 // L.polyline(BearID_mcp281, {
 //   color: "red"
 // }).addTo(myMap);
 
-var BearID_mcp7 = [
+var BearID_mcp7 = L.polyline( [
     [ 70.164, -142.896],
     [ 70.209, -143.052],
     [ 70.2, -142.95],
@@ -2884,13 +2884,13 @@ var BearID_mcp7 = [
     [ 69.557, -137.936]
       
   
-];
+],{color:"purple"}).bindPopup("Bear 7");
 // L.polyline(BearID_mcp7, {
 //   color: "red"
 // }).addTo(myMap);
 
 
-var BearID_mcp52 = [
+var BearID_mcp52 =  L.polyline( [
     [ 70.437, -142.813],
     [ 70.482, -142.801],
     [ 71.49, -142.22],
@@ -3787,12 +3787,12 @@ var BearID_mcp52 = [
     [ 71.264, -158.141]
     
     
-  ];
+  ],{color:"orange"}).bindPopup("Bear 52");
 //   L.polyline(BearID_mcp52, {
 //     color: "red"
 //   }).addTo(myMap);
 
-  var BearID_mcp144 = [
+  var BearID_mcp144 =  L.polyline([
     [ 70.579, -147.311],
 [ 70.589, -147.315],
 [ 70.611, -147.219],
@@ -4627,12 +4627,12 @@ var BearID_mcp52 = [
 [ 71.801, -163.81]
 
     
-  ];
+  ],{color:"pink"}).bindPopup("Bear 144");
 //   L.polyline(BearID_mcp144, {
 //     color: "red"
 //   }).addTo(myMap);
 
-  var BearID_mcp302 = [
+  var BearID_mcp302 = L.polyline( [
     [ 70.372, -142.681],
     [ 70.359, -142.445],
     [ 70.387, -142.497],
@@ -5332,12 +5332,12 @@ var BearID_mcp52 = [
     [ 70.3302, -143.8492]
     
     
-  ];
+  ],{color:"black"}).bindPopup("Bear 302");
 //   L.polyline(BearID_mcp302, {
 //     color: "red"
 //   }).addTo(myMap);
 
-  var BearID_mcp89  = [
+  var BearID_mcp89  = L.polyline( [
     [ 70.636, -146.237],
 [ 70.642, -146.169],
 [ 70.618, -146.214],
@@ -5968,13 +5968,13 @@ var BearID_mcp52 = [
 [ 73.999, -129.794]
 
     
-];
+],{color:"yellow"}).bindPopup("Bear 89");
 // L.polyline(BearID_mcp89, {
 //     color: "red"
 // }).addTo(myMap); 
 
 
-var BearID_mcp160 = [
+var BearID_mcp160 =  L.polyline( [
     [ 70.309, -146.252],
     [ 70.30817, -146.2515],
     [ 70.32808, -146.32403],
@@ -6603,13 +6603,13 @@ var BearID_mcp160 = [
     [ 70.534, -144.209]
     
     
-];
+],{color:"darkblue"}).bindPopup("Bear 160");
 // L.polyline(BearID_mcp160, {
 //     color: "red"
 // }).addTo(myMap);
 
 
-var BearID_mcp50 = [
+var BearID_mcp50 = L.polyline( [
     [ 70.944, -145.433],
     [ 70.938, -145.411],
     [ 70.754, -151.309],
@@ -7202,12 +7202,12 @@ var BearID_mcp50 = [
     [ 70.922, -149.563]
     
     
-  ];
+  ],{color:"darkred"}).bindPopup("Bear 50");
 //   L.polyline(BearID_mcp50 , {
 //     color: "red"
 //   }).addTo(myMap);
 
-var BearID_mcp139 = [
+var BearID_mcp139 = L.polyline( [
     [ 71.215, -148.301],
     [ 70.668, -147.347],
     [ 70.845, -148.474],
@@ -7799,13 +7799,13 @@ var BearID_mcp139 = [
     [ 70.32156, -145.55859]
     
     
-  ];
+  ],{color:"darkgreen"}).bindPopup("Bear 139");
 // L.polyline(BearID_mcp139, {
 //     color: "red"
 // }).addTo(myMap);  
 
 
-var BearID_mcp114 = [
+var BearID_mcp114 =  L.polyline( [
     [ 70.579, -147.311],
     [ 70.589, -147.315],
     [ 70.611, -147.219],
@@ -8640,13 +8640,13 @@ var BearID_mcp114 = [
     [ 71.801, -163.81]
     
     
-  ];
+  ],{color:"lightgreen"}).bindPopup("Bear 114");
 // L.polyline(BearID_mcp114, {
 //     color: "red"
 // }).addTo(myMap);
 
 
-var BearID_mcp129 = [
+var BearID_mcp129 =  L.polyline( [
     [ 71.717, -156.294],
     [ 71.938, -156.214],
     [ 71.994, -156.454],
@@ -9192,14 +9192,14 @@ var BearID_mcp129 = [
     
     
     
-  ];
+  ],{color:"gray"}).bindPopup("Bear 129");
 // L.polyline(BearID_mcp129, {
 //     color: "red"
 // }).addTo(myMap);
 
 
 
-var BearID_mcp207 = [
+var BearID_mcp207 = L.polyline( [
     [ 71.3416, -154.8812],
     [ 71.4361, -154.7376],
     [ 71.4949, -154.7718],
@@ -9739,7 +9739,7 @@ var BearID_mcp207 = [
     [ 79.204, -147.441]
     
     
-  ];
+  ],{color:"darkgreen"}).bindPopup("Bear 207");
 // L.polyline(BearID_mcp207, {
 //     color: "red"
 // }).addTo(myMap);
@@ -9747,7 +9747,7 @@ var BearID_mcp207 = [
 
 
 
-var BearID_mcp135 = [
+var BearID_mcp135 =  L.polyline( [
     [ 70.6037, -146.9369],
     [ 70.6053, -146.9382],
     [ 70.6053, -146.9388],
@@ -10280,14 +10280,14 @@ var BearID_mcp135 = [
     [ 70.164, -143.187]
     
     
-  ];
+  ],{color:"magenta"}).bindPopup("Bear 135");
 // L.polyline(BearID_mcp135, {
 //     color: "red"
 // }).addTo(myMap);
 
 
 
-var BearID_mcp204 = [
+var BearID_mcp204 = L.polyline( [
     [ 70.5622, -148.0841],
     [ 70.5659, -148.0926],
     [ 70.5994, -148.095],
@@ -10790,13 +10790,13 @@ var BearID_mcp204 = [
     [ 71.269, -157.93]
     
     
-  ];
+  ],{color:"lightblue"}).bindPopup("Bear 204");
 // L.polyline(BearID_mcp204, {
 //     color: "red"
 // }).addTo(myMap);
 
 
-var BearID_mcp38 = [
+var BearID_mcp38 =  L.polyline([
     [ 71.054, -149.518],
     [ 71.049, -149.496],
     [ 71.431, -149.514],
@@ -11293,14 +11293,14 @@ var BearID_mcp38 = [
     [ 73.042, -140.994]
     
     
-  ];
+  ],{color:"red"}).bindPopup("Bear 38");
 // L.polyline(BearID_mcp38, {
 //     color: "red"
 // }).addTo(myMap);
 
 
 
-var BearID_mcp213 = [
+var BearID_mcp213 = L.polyline( [
     [ 70.5604, -147.6274],
     [ 70.6665, -147.8636],
     [ 70.7958, -148.0529],
@@ -11799,13 +11799,13 @@ var BearID_mcp213 = [
     
     
     
-  ];
+  ],{color:"white"}).bindPopup("Bear 213");
 // L.polyline(BearID_mcp213, {
 //     color: "red"
 // }).addTo(myMap);
 
 
-var BearID_mcp294 = [
+var BearID_mcp294 =L.polyline([
     [ 71.5104, -156.1836],
     [ 71.6248, -155.7551],
     [ 71.6756, -155.8089],
@@ -12299,14 +12299,14 @@ var BearID_mcp294 = [
     [ 71.828, -151.509]
     
     
-  ];
+  ],{color:"yellow"}).bindPopup("Bear 294");
 // L.polyline(BearID_mcp294, {
 //     color: "red"
 // }).addTo(myMap);
 
 
 
-var BearID_mcp250 = [
+var BearID_mcp250 = L.polyline([
     [ 70.47604, -146.66247],
     [ 70.52286, -146.77007],
     [ 70.56153, -146.91482],
@@ -12787,13 +12787,13 @@ var BearID_mcp250 = [
     [ 71.915, -158.762]
     
     
-  ];
+  ],{color:"pink"}).bindPopup("Bear 250");
 // L.polyline(BearID_mcp250, {
 //     color: "red"
 // }).addTo(myMap);
 
 
-var BearID_mcp179 = [
+var BearID_mcp179 = L.polyline( [
     [ 70.403, -146.814],
     [ 70.416, -146.745],
     [ 70.419, -146.628],
@@ -13267,7 +13267,7 @@ var BearID_mcp179 = [
     [ 69.9163, -136.3747]
     
     
-  ];
+  ],{color:"red"}).bindPopup("Bear 179");
 // L.polyline(BearID_mcp179, {
 //     color: "red"
 // }).addTo(myMap);
@@ -13342,25 +13342,32 @@ function createMap(polarbears) {
         BearID_204: BearID_mcp204,
         BearID_38: BearID_mcp38,
         BearID_213: BearID_mcp213,
-        BearID_294: BearID_mcp294,
         BearID_250: BearID_mcp250,
-        BearID_179: BearID_mcp179
-         
+        BearID_179: BearID_mcp179, 
+        BearID_294: BearID_mcp294
     };
   
+   // one_bear=L.polyline(BearID_mcp179, {
+        //     color: "red"
+     //   });
     // Create our map, giving it the streetmap and earthquakes layers to display on load
     var myMap = L.map("map", {
       center: [ 74.52, -125.67],
       zoom: 3,
-      layers: [satelitemap, darkmap, bearPaths]
+      layers: [satelitemap, darkmap].concat(Object.values(bearPaths))
+      //layers: [darkmap].concat(Object.values(bearPaths))
     });
-  
+    
+    var overlays=L.layerGroup([Object.values(bearPaths)]);
+        
+        
     // Create a layer control
     // Pass in our baseMaps and overlayMaps
     // Add the layer control to the map
-    L.control.layers(baseMaps, bearPaths, {
-      collapsed: false
-    }).addTo(myMap);
+    // L.control.layers(baseMaps,{//, {'bears': overlays}, {//bearPaths, {
+    //   collapsed: false
+    // }).addTo(myMap);
+    L.control.layers(baseMaps, bearPaths).addTo(myMap);
 };
 createMap();
 
