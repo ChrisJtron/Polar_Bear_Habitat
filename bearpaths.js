@@ -1,33 +1,3 @@
-// Create an initial map object
-// Set the longitude, latitude, and the starting zoom level
-// var myMap = L.map("map").setView([74.52, -125.67], 3);
-
-// // Add a tile layer (the background map image) to our map
-// // Use the addTo method to add objects to our map
-// var light = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-//   attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-//   maxZoom: 3,
-//   id: "light-v10",
-//   accessToken: API_KEY
-// });
-
-// var dark = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-//   attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-//   maxZoom: 3,
-//   id: "dark-v10",
-//   accessToken: API_KEY
-// });
-
-// // Only one base layer can be shown at a time
-// var baseMaps = {
-//   Light: light,
-//   Dark: dark
-// };
-
-
-// L.layers(baseMaps).addto(myMap);
-
-// var pathLayer= L.layerGroup(polarPath)
 
 var BearID_mcp32 = L.polyline( [
 [ 70.473, -147.153],
@@ -13274,31 +13244,6 @@ var BearID_mcp179 = L.polyline( [
 
 
 
-// var overlayMaps={
-//     BearID_32: BearID_32,
-//     BearID_281: BearID_281,
-//     BearID_7: BearID_7,
-//     BearID_52: BearID_52,
-//     BearID_144: BearID_144,
-//     BearID_302: BearID_302,
-//     BearID_89: BearID_89,
-//     BearID_160: BearID_160,
-//     BearID_50: BearID_50,
-//     BearID_139: BearID_139,
-//     BearID_114: BearID_114,
-//     BearID_129: BearID_129,
-//     BearID_207: BearID_207,
-//     BearID_135: BearID_135,
-//     BearID_204: BearID_204,
-//     BearID_38: BearID_38,
-//     BearID_213: BearID_213,
-//     BearID_294: BearID_294,
-//     BearID_250: BearID_250,
-//     BearID_179: BearID_179
-     
-// };
-
-// L.control.layers(overlayMaps).addto(myMap);
 
 function createMap(polarbears) {
  
