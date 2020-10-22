@@ -11315,81 +11315,84 @@ var BearID_mcp179 = L.polyline( [
 // }).addTo(myMap);
 
 
+function createMap(id) {
+  var id = d3.select('#selDataset').property("value");
+  console.log(id)
+  // Define streetmap and darkmap layers
+  var satelitemap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+    maxZoom: 18,
+    id: "mapbox.satellite",
+    accessToken: API_KEY
+  });
 
+  var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+    maxZoom: 18,
+    id: "dark-v10",
+    accessToken: API_KEY
+  });
 
-function createMap(polarbears) {
- 
-    // Define streetmap and darkmap layers
-    var satelitemap = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-      attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-      maxZoom: 18,
-      id: "mapbox.satellite",
-      accessToken: API_KEY
-    });
-  
-    var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-      attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
-      maxZoom: 18,
-      id: "dark-v10",
-      accessToken: API_KEY
-    });
-  
-    // Define a baseMaps object to hold our base layers
-    var baseMaps = {
-      "Satelite Map": satelitemap,
-      "Dark Map": darkmap
-    };
-  
-    // Create overlay object to hold our overlay layer
+  // Define a baseMaps object to hold our base layers
+  var baseMaps = {
+    "Satelite Map": satelitemap,
+    "Dark Map": darkmap
+  };
+
+  // Create overlay object to hold our overlay layer
+  if(id == "All") {
     var bearPaths={
-        BearID_32: BearID_mcp32,
-        BearID_281: BearID_mcp281,
-        BearID_7: BearID_mcp7,
-        BearID_52: BearID_mcp52,
-        BearID_144: BearID_mcp144,
-        BearID_302: BearID_mcp302,
-        BearID_89: BearID_mcp89,
-        BearID_160: BearID_mcp160,
-        BearID_50: BearID_mcp50,
-        BearID_139: BearID_mcp139,
-        BearID_114: BearID_mcp114,
-        BearID_129: BearID_mcp129,
-        BearID_207: BearID_mcp207,
-        BearID_135: BearID_mcp135,
-        BearID_204: BearID_mcp204,
-        BearID_38: BearID_mcp38,
-        BearID_213: BearID_mcp213,
-        BearID_250: BearID_mcp250,
-        BearID_179: BearID_mcp179, 
-        BearID_294: BearID_mcp294
-    };
+      BearID_32: BearID_mcp32,
+      BearID_281: BearID_mcp281,
+      BearID_7: BearID_mcp7,
+      BearID_52: BearID_mcp52,
+      BearID_144: BearID_mcp144,
+      BearID_302: BearID_mcp302,
+      BearID_89: BearID_mcp89,
+      BearID_160: BearID_mcp160,
+      BearID_50: BearID_mcp50,
+      BearID_139: BearID_mcp139,
+      BearID_114: BearID_mcp114,
+      BearID_129: BearID_mcp129,
+      BearID_207: BearID_mcp207,
+      BearID_135: BearID_mcp135,
+      BearID_204: BearID_mcp204,
+      BearID_38: BearID_mcp38,
+      BearID_213: BearID_mcp213,
+      BearID_250: BearID_mcp250,
+      BearID_179: BearID_mcp179, 
+      BearID_294: BearID_mcp294
+    }
+  } else if(id === "BearID_32") {
+    var bearPaths = {
+      BearID_32: BearID_mcp32
+    }
+  }   else if(id === 'BearID_281') {
+  var bearPaths = {
+    BearID_281: BearID_mcp281
+    }
+  }
+  console.log(bearPaths)
+// }
+
+  // Create our map, giving it the streetmap and earthquakes layers to display on load
+  var myMap = L.map("map", {
+    center: [ 74.52, -125.67],
+    zoom: 3,
+    layers: [satelitemap, darkmap].concat(Object.values(bearPaths))
+    //layers: [darkmap].concat(Object.values(bearPaths))
+  });
   
-   // one_bear=L.polyline(BearID_mcp179, {
-        //     color: "red"
-     //   });
-    // Create our map, giving it the streetmap and earthquakes layers to display on load
-    var myMap = L.map("map", {
-      center: [ 74.52, -125.67],
-      zoom: 3,
-      layers: [satelitemap, darkmap].concat(Object.values(bearPaths))
-      //layers: [darkmap].concat(Object.values(bearPaths))
-    });
-    
-    var overlays=L.layerGroup([Object.values(bearPaths)]);
-        
-        
-    // Create a layer control
-    // Pass in our baseMaps and overlayMaps
-    // Add the layer control to the map
-    // L.control.layers(baseMaps,{//, {'bears': overlays}, {//bearPaths, {
-    //   collapsed: false
-    // }).addTo(myMap);
-    L.control.layers(baseMaps, bearPaths).addTo(myMap);
+  var overlays=L.layerGroup([Object.values(bearPaths)]);
+      
+      
+  // Create a layer control
+  // Pass in our baseMaps and overlayMaps
+  // Add the layer control to the map
+  L.control.layers(baseMaps, bearPaths).addTo(myMap);
 };
 createMap();
 });
-
-
 
 function panel(id) {
   d3.json("bears.json").then(sampleData => {
@@ -11424,9 +11427,13 @@ var select = d3.select('#selDataset');
             select.append("option").text(name).property("value");
         });
 
-        // Call the plot and panel functions with the data from the first sample id
-        // plots(data.names[0]);
+        // Call the panel functions with the data from the first sample id
         panel(data.bears[0]);
+        // createMap(data.bears[0]);
+
+        var id = data.bears[0]
+        console.log(id)
+
   });
 };
   
@@ -11439,8 +11446,7 @@ function updatePlotly() {
   // Assign the value of the dropdown menu option to a variable
   var id = dropdownMenu.property("value");
   console.log(id)
-  // Call plot and panel functions with selection
-  // plots(id);
+  // Call panel functions with selection
   panel(id);
 };
 
