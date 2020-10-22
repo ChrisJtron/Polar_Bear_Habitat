@@ -12,59 +12,6 @@ d3.json('http://127.0.0.1:5000/data').then(data => {
     mcp281.push([filtBear[i].lat, filtBear[i].lon])
   }; 
   console.log(mcp281)
-    // var lat = filtBear.lat;
-    // var lon = filtBear.lon;
-    // console.log(filtBear);
-    // console.log(lat);
-    // console.log(lon);
-
-d3.json("bears.json").then(sampleData => {
-      
-  var metaData = sampleData.metadata;
-  console.log(metaData);
-
-  // Filter the data by selected sample id
-  var filtSamp = metaData.filter(sample => sample.id.toString() === 'BearID_32')[0];
-  console.log(filtSamp);
-
-  // Select the panel in the html
-  var panelData = d3.select('#sample-metadata');
-
-  // Clear the panel upon selection
-  panelData.html("");
-
-  // Add panel entries
-  Object.entries(filtSamp).forEach(function([key, value]) {
-      panelData.append("h4").text(`${key}: ${value}`);
-  });
-});
-
-d3.json("bears.json").then(data => {
-  console.log(data);
-
-  // var samples = data.distance[0];
-  // console.log(samples)
-
-  // var bear = data.filter(data => data.distance === 'BearID_32');
-  // console.log(bear);
-});
-
-function init() {
-var select = d3.select('#Bears');
-
-    // populate the drop down selector with the sample id names
-    d3.json("bears.json").then(data => {
-        data.bears.forEach(name => {
-            select.append("option").text(name).property("value");
-        });
-
-        // Call the plot and panel functions with the data from the first sample id
-        // plots(data.names[0]);
-        // panel(data.names[0]);
-    });
-};
-
-init();
 
 var BearID_mcp32 = L.polyline(mcp32 ,{color:"green"}).bindPopup("Bear 32");
 // L.polyline(BearID_mcp32, {
@@ -11441,3 +11388,60 @@ function createMap(polarbears) {
 };
 createMap();
 });
+
+
+
+function panel(id) {
+  d3.json("bears.json").then(sampleData => {
+        
+    var metaData = sampleData.metadata;
+    console.log(metaData);
+
+    // Filter the data by selected sample id
+    var filtSamp = metaData.filter(sample => sample.id.toString() === id)[0];
+    console.log(filtSamp);
+
+    // Select the panel in the html
+    var panelData = d3.select('#sample-metadata');
+
+    // Clear the panel upon selection
+    panelData.html("");
+
+    // Add panel entries
+    Object.entries(filtSamp).forEach(function([key, value]) {
+        panelData.append("h4").text(`${key}: ${value}`);
+    });
+  });
+}
+
+function init() {
+
+var select = d3.select('#selDataset');
+
+    // populate the drop down selector with the sample id names
+    d3.json("bears.json").then(data => {
+        data.bears.forEach(name => {
+            select.append("option").text(name).property("value");
+        });
+
+        // Call the plot and panel functions with the data from the first sample id
+        // plots(data.names[0]);
+        panel(data.metaData[0]);
+  });
+};
+  
+d3.select('#selDataset').on('change', updatePlotly);
+
+// Create a function to update the panel
+function updatePlotly() {
+  // Use D3 to select the dropdown menu
+  var dropdownMenu = d3.select("#selDataset");
+  // Assign the value of the dropdown menu option to a variable
+  var id = dropdownMenu.property("value");
+  console.log(id)
+  // Call plot and panel functions with selection
+  // plots(id);
+  panel(id);
+};
+
+init();
