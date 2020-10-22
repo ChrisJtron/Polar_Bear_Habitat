@@ -11426,7 +11426,7 @@ var select = d3.select('#selDataset');
 
         // Call the plot and panel functions with the data from the first sample id
         // plots(data.names[0]);
-        panel(data.metaData[0]);
+        panel(data.bears[0]);
   });
 };
   
