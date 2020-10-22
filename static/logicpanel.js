@@ -14,7 +14,7 @@ init()
 
 
 d3.json("static/bears.json").then(function(data){
-      
+    jsondata=data  
     console.log(data);
     var selection=d3.select("#selBear");
     var inputValue=selection.property('value');
