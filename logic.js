@@ -1,5 +1,3 @@
-
-
 d3.json('http://127.0.0.1:5000/data').then(data => {
   console.log(data);
   var filtBear = data.filter(data => data.id === 32);
@@ -19,7 +17,54 @@ d3.json('http://127.0.0.1:5000/data').then(data => {
     // console.log(filtBear);
     // console.log(lat);
     // console.log(lon);
-   
+
+// d3.json("top20.json").then(sampleData => {
+      
+//   // var metaData = sampleData.metadata;
+//   // console.log(metaData);
+
+//   // Filter the data by selected sample id
+//   var filtSamp = sampleData.filter(sample => sample.id.toString() === id)[0];
+//   console.log(filtSamp);
+
+//   // Select the panel in the html
+//   var panelData = d3.select('#sample-metadata');
+
+//   // Clear the panel upon selection
+//   panelData.html("");
+
+//   // Add panel entries
+//   Object.entries(filtSamp).forEach(function([key, value]) {
+//       panelData.append("h4").text(`${key}: ${value}`);
+//   });
+// });
+
+d3.json("top20.json").then(data => {
+  console.log(data);
+
+  var samples = data.distance[0];
+  console.log(samples)
+
+  // var bear = data.filter(data => data.id === 'BearID_32');
+  // console.log(bear);
+});
+
+// function init() {
+// var select = d3.select('#Bears');
+
+//     // populate the drop down selector with the sample id names
+//     d3.json("top20.json").then(data => {
+//         data.id[0].forEach(name => {
+//             select.append("option").text(name).property("value");
+//         });
+
+//         // Call the plot and panel functions with the data from the first sample id
+//         // plots(data.names[0]);
+//         // panel(data.names[0]);
+//     });
+// };
+
+// init();
 
 var BearID_mcp32 = L.polyline(mcp32 ,{color:"green"}).bindPopup("Bear 32");
 // L.polyline(BearID_mcp32, {
