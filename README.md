@@ -15,8 +15,7 @@ In order the produce the interactive site, the following tools were used:
 - Bootstrap and CSS
 
 # End Users
-
-# Conclusions from the Data
+The idea of tracking the polar bears by putting together a fun interactive dashboard was to deploy it in and educational setting for kids, for those that would like to see if migration patterns change with habitat change, and for those that are concerned with the relationship between polar bears and seals.
 
 # Website Demo
 ![Demo](https://github.com/cscaile/Polar_Bear_Habitat/blob/dave_borowski/demos/demo1.gif)
